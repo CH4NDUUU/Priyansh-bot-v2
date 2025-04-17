@@ -279,7 +279,7 @@ const fs = global.nodemodule["fs-extra"];
 "https://i.imgur.com/tC2Sy8a.jpg" ,
      ];
      var callback = () => api.sendMessage({body:`┏━━━━━┓\n     ╔╬⓼★⓼╃───────➣™
-🄼🅁 🄱🄾🅃 🄾🅆🄽🄴🅁 🄰🅁🅈🄰🄽𝄠━─━Ⓔ⧐
+🄼🅁 🄱🄾🅃 🄾🅆🄽🄴🅁 🅂🄰🄼🄴🄴🅁𝄠━─━Ⓔ⧐
 ╰✾✾®️╀✿✿╀─━ↈⓇ⧐            ✧══•❁😛❁•══✧\n┗━━━━━┛\n\n♥️`,attachment: fs.createReadStream(__dirname + "/cache/AOV.jpg")}, event.threadID, () => fs.unlinkSync(__dirname + "/cache/AOV.jpg"));  
       return request(encodeURI(link[Math.floor(Math.random() * link.length)])).pipe(fs.createWriteStream(__dirname+"/cache/AOV.jpg")).on("close",() => callback());
    };
