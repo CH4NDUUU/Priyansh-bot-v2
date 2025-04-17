@@ -22,7 +22,7 @@ module.exports.onLoad = async() => {
     const dirMaterial = __dirname + `/cache/canvas/`;
     const path = resolve(__dirname, 'cache/canvas', 'arr2.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/iaOiAXe.jpeg", path); 
+    if (!existsSync(path)) await downloadFile("https://i.postimg.cc/bvhLCc6r/arr2.jpg", path); 
 }
 
 async function makeImage({ one, two }) {
@@ -69,6 +69,6 @@ module.exports.run = async function ({ event, api, args }) {
     if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
     else {
         const one = senderID, two = mention[0];
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "╭──────•◈•───────╮\n         𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁       \n\n━━━━⊱🩷⊰━━━━\n🌻⑅⃝আ্ঁল্ঁভী্ঁ🪴ত্যা্ঁহ্ঁ🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n💜🌻┼─🌈— •°─༅༎༅💖 ❥︎:-🌼💚_𝐅𝐞𝐞𝐥𝐢𝐧𝐠𝐬 𝐚𝐫𝐞 𝐦𝐚𝐧𝐲 𝐛𝐮𝐭 𝐭𝐡𝐞 𝐥𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐨𝐟 𝐞𝐱𝐩𝐫𝐞𝐬𝐬𝐢𝐨𝐧 𝐢𝐬 𝐟𝐞𝐰:-🌼🌻\n\n彡❝:-🌼💞অনুভূতি অনেক কিন্তু প্রকাশের ভাষা অল্প🪴✨💜\n\━━━━⊱🩷⊰━━━━\n🌻⑅⃝🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n\n  BOT OWNER Ullash ッ\n╰──────•◈•───────╯", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "╭──────•◈•───────╮\n         𝐒𝐀𝐦𝐞𝐞𝐫 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁       \n\n━━━━⊱🩷⊰━━━━\n🌻⑅⃝𝐒𝐀𝐦𝐞𝐞𝐫🪴𝐊𝐡𝐀𝐚𝐧🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n💜🌻┼─🌈— •°─༅༎༅💖 ❥︎:-🌼💚_𝐅𝐞𝐞𝐥𝐢𝐧𝐠𝐬 𝐚𝐫𝐞 𝐦𝐚𝐧𝐲 𝐛𝐮𝐭 𝐭𝐡𝐞 𝐥𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐨𝐟 𝐞𝐱𝐩𝐫𝐞𝐬𝐬𝐢𝐨𝐧 𝐢𝐬 𝐟𝐞𝐰:-🌼🌻\n\n彡❝:-🌼💞𝐊н๏๏sɓ๏๏ bʌηʞəɽ təɽı sʌʌηsøη ɱə Smʌ JaYƏnGə🪴✨💜\n\━━━━⊱🩷⊰━━━━\n🌻⑅⃝🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n\n  𝐁𝐎𝐓 𝐎𝐰𝐧𝐞𝐫 𝐒𝐀𝐦𝐞𝐞𝐫 𝐊𝐡𝐀𝐚𝐧 ッ\n╰──────•◈•───────╯", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
       }
