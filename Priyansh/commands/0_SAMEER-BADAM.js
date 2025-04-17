@@ -15,7 +15,7 @@ module.exports.handleEvent = function({ api, event, client, __GLOBAL }) {
         if (event.body.indexOf("badam drink")==0 || event.body.indexOf("Badam drink")==0 || event.body.indexOf("BADAMDRINK")==0 || event.body.indexOf("Badamdrink")==0) {
                 var msg = {
                                 body: "=𝐎𝐰𝐧𝐞𝐫 ➻  𝐒𝐀𝐦𝐞𝐞𝐫 𝐊𝐡𝐀𝐚𝐧 \n< ────────────────── >\n\n𝐘𝐚𝐚 𝐋𝐨𝐨 𝐁𝐚𝐁𝐲 𝐁𝐚𝐃𝐚𝐦𝐃𝐫𝐢𝐧𝐤\n< ────────────────── >",
-                                attachment: fs.createReadStream(__dirname + `/noprefix/d190b09072f95cf62eda8634c130be8c.jpg`)
+                                attachment: fs.createReadStream(__dirname + `/noprefix/BadamDrinkCan.jpg`)
                         }
                         api.sendMessage(msg, threadID, messageID);
     api.setMessageReaction("🥛", event.messageID, (err) => {}, true)
