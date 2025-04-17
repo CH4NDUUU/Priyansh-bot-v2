@@ -2,11 +2,11 @@ module.exports.config = {
     name: "love",
     version: "7.3.1",
     hasPermssion: 0,
-    credits: " AARYAN",///don't change my Credit Coz i Edit 
+    credits: "Alvi",///don't change my Credit Coz i Edit 
     description: "Get Pair From Mention",
     commandCategory: "img",
     usages: "[@mention]",
-    cooldowns: 6,
+    cooldowns: 5, 
     dependencies: {
         "axios": "",
         "fs-extra": "",
@@ -14,45 +14,45 @@ module.exports.config = {
         "jimp": ""
     }
 };
- 
+
 module.exports.onLoad = async() => {
     const { resolve } = global.nodemodule["path"];
     const { existsSync, mkdirSync } = global.nodemodule["fs-extra"];
     const { downloadFile } = global.utils;
     const dirMaterial = __dirname + `/cache/canvas/`;
-    const path = resolve(__dirname, 'cache/canvas', 'ay.jpeg');
+    const path = resolve(__dirname, 'cache/canvas', 'arr2.png');
     if (!existsSync(dirMaterial + "canvas")) mkdirSync(dirMaterial, { recursive: true });
-    if (!existsSync(path)) await downloadFile("https://i.imgur.com/N5fNUHb.jpeg", path);
+    if (!existsSync(path)) await downloadFile("https://i.imgur.com/iaOiAXe.jpeg", path); 
 }
- 
+
 async function makeImage({ one, two }) {
     const fs = global.nodemodule["fs-extra"];
     const path = global.nodemodule["path"];
     const axios = global.nodemodule["axios"]; 
     const jimp = global.nodemodule["jimp"];
     const __root = path.resolve(__dirname, "cache", "canvas");
- 
-    let batgiam_img = await jimp.read(__root + "/ay.jpeg");
-    let pathImg = __root + `/batman${one}_${two}.jpeg`;
-    let avatarOne = __root + `/avt_${one}.jpeg`;
-    let avatarTwo = __root + `/avt_${two}.jpeg`;
- 
+
+    let batgiam_img = await jimp.read(__root + "/arr2.png");
+    let pathImg = __root + `/batman${one}_${two}.png`;
+    let avatarOne = __root + `/avt_${one}.png`;
+    let avatarTwo = __root + `/avt_${two}.png`;
+    
     let getAvatarOne = (await axios.get(`https://graph.facebook.com/${one}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarOne, Buffer.from(getAvatarOne, 'utf-8'));
- 
+    
     let getAvatarTwo = (await axios.get(`https://graph.facebook.com/${two}/picture?width=512&height=512&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`, { responseType: 'arraybuffer' })).data;
     fs.writeFileSync(avatarTwo, Buffer.from(getAvatarTwo, 'utf-8'));
- 
+    
     let circleOne = await jimp.read(await circle(avatarOne));
     let circleTwo = await jimp.read(await circle(avatarTwo));
-    batgiam_img.composite(circleOne.resize(200, 200), 92, 135).composite(circleTwo.resize(200, 200), 572, 135);
- 
-    let raw = await batgiam_img.getBufferAsync("image/jpeg");
- 
+    batgiam_img.composite(circleOne.resize(200, 200), 70, 110).composite(circleTwo.resize(200, 200), 465, 110);
+    
+    let raw = await batgiam_img.getBufferAsync("image/png");
+    
     fs.writeFileSync(pathImg, raw);
     fs.unlinkSync(avatarOne);
     fs.unlinkSync(avatarTwo);
- 
+    
     return pathImg;
 }
 async function circle(image) {
@@ -61,7 +61,7 @@ async function circle(image) {
     image.circle();
     return await image.getBufferAsync("image/png");
 }
- 
+
 module.exports.run = async function ({ event, api, args }) {    
     const fs = global.nodemodule["fs-extra"];
     const { threadID, messageID, senderID } = event;
@@ -69,6 +69,6 @@ module.exports.run = async function ({ event, api, args }) {
     if (!mention[0]) return api.sendMessage("Please mention 1 person.", threadID, messageID);
     else {
         const one = senderID, two = mention[0];
-        return makeImage({ one, two }).then(path => api.sendMessage({ body: "🌸===『*★𝗖𝗿𝗲𝗱𝗶𝘁'𝘀 𒁍𝐒𝐀𝐌𝐄𝐄𝐑 𝐊𝐇𝐀𝐍☜ ✧•❁ 𝐋𝐎𝐕𝐄 ❁•✧\n\n╔═══❖••° °••❖═══╗\n\n   𝐒𝐮𝐜𝐜𝐞𝐬𝐬𝐟𝐮𝐥 𝐏𝐚𝐢𝐫𝐢𝐧𝐠\n\n╚═══❖••° °••❖═══╝\n\n   ✶⊶⊷⊷❍⊶⊷⊷✶\n\n       👑𝐘𝐄 𝐋𝐄 𝐌𝐈𝐋 𝐆𝐘𝐀 ❤\n\n𝐓𝐄𝐑𝐀 𝐏𝐘𝐀𝐑 🩷\n\n   ✶⊶⊷⊷❍⊶⊷⊷✶                    ─━━◉❖𝐈 𝐋𝐎𝐕𝐄 𝐘𝐎𝐔🤗❖◉━━─           ❥═≛𝐒𝐎 𝐌𝐔𝐂𝐇 💝≛═❥                ─━━◉❖ 𝐌𝐘 𝐉𝐀𝐀𝐍𝐔 🙈❖◉━━─\nỖ𝐖ηᗴ𝐑◉❖𒁍𝐒𝐀𝐌𝐄𝐄𝐑 𝐊𝐇𝐀𝐍", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
+        return makeImage({ one, two }).then(path => api.sendMessage({ body: "╭──────•◈•───────╮\n         𝗜𝘀𝗹𝗮𝗺𝗶𝗰𝗸 𝗰𝗵𝗮𝘁 𝗯𝗼𝘁       \n\n━━━━⊱🩷⊰━━━━\n🌻⑅⃝আ্ঁল্ঁভী্ঁ🪴ত্যা্ঁহ্ঁ🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n💜🌻┼─🌈— •°─༅༎༅💖 ❥︎:-🌼💚_𝐅𝐞𝐞𝐥𝐢𝐧𝐠𝐬 𝐚𝐫𝐞 𝐦𝐚𝐧𝐲 𝐛𝐮𝐭 𝐭𝐡𝐞 𝐥𝐚𝐧𝐠𝐮𝐚𝐠𝐞 𝐨𝐟 𝐞𝐱𝐩𝐫𝐞𝐬𝐬𝐢𝐨𝐧 𝐢𝐬 𝐟𝐞𝐰:-🌼🌻\n\n彡❝:-🌼💞অনুভূতি অনেক কিন্তু প্রকাশের ভাষা অল্প🪴✨💜\n\━━━━⊱🩷⊰━━━━\n🌻⑅⃝🩷⑅⃝┉❈\n━━━━⊱🩷⊰━━━━\n\n  BOT OWNER Ullash ッ\n╰──────•◈•───────╯", attachment: fs.createReadStream(path) }, threadID, () => fs.unlinkSync(path), messageID));
     }
-}
+      }
